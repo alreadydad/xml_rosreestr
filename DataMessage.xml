@@ -1,3 +1,22 @@
 <DataMessage>
-   <eDocument />
+   <eDocument Version="01" GUID="F39B0091-2643-49A0-A34D-EFBD9AF656F1" ProcessingKind="Addition" InformationKind="ZonyMozno">
+      <Sender Region="29" Name="ООО &quot;Рога и Копыта&quot;" DateTime_Upload="2022-07-29T17:10:37" Count_Unload="154" />
+   </eDocument>
+   <Package>
+      <ZonyMozno CoordinateSystem="EPSG:3857">
+         <ZonyMoznoEntitySpatial>
+            <ZonyMoznoObjectInfo Index="" Region="*****" Name="*****" DocumentName="*****" Authority="*****" />
+            <SpatialElement>
+               <SpelementUnit TypeUnit="*****">
+                  <NewOrdinate Num_Geopoint="*****" X="*****" Y="*****" />
+               </SpelementUnit>
+               <SpatialRingElement>
+                  <SpelementUnit>
+                     <NewOrdinate Num_Geopoint="*****" X="*****" Y="*****" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+            </SpatialElement>
+         </ZonyMoznoEntitySpatial>
+      </ZonyMozno>
+   </Package>
 </DataMessage>
