@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">	
     <xs:simpleType name="InformationKindDict">
-		<xs:annotation>
 			<xs:documentation>Тип объектов, передаваемый в рамках XML-файла</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="SpecialZones">
-				<xs:annotation>
 					<xs:documentation>Территории, земли, зоны,  в границах которых земельные участки не могут быть предоставлены в безвозмездное пользование в соответствии с частями 3, 3.3 статьи 2 и статьей 7 Закона № 119-ФЗ; Зоны с особыми условиями использования территорий; Охотничьи угодья; Территории объектов культурного наследия; Границы и территории</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ZonyMozno">
-				<xs:annotation>
 					<xs:documentation>Территории, в границах которых земельные участки могут быть предоставлены в безвозмездное пользование в соответствии с частью 3.5 статьи 2 Закона № 119-ФЗ</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ParcelWithoutBorder">
-				<xs:annotation>
 					<xs:documentation>Земельные участки, указанные в пунктах 3,4,10 части 1 статьи 3 Закона № 119-ФЗ, которые не могут быть предоставлены в безвозмездное пользование</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="FreeRightParcels">
-				<xs:annotation>
 					<xs:documentation>Земельные участки, свободные от прав третьих лиц</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>

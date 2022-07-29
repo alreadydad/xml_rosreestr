@@ -1,39 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">	
     <xs:simpleType name="ObjectKindDict">
-		<xs:annotation>
 			<xs:documentation>Тип объектов, передаваемый в рамках группы сведений 1:
 						1. Территории, земли, зоны,  в границах которых земельные участки не могут быть предоставлены в безвозмездное пользование в соответствии с частями 3, 3.3 статьи 2 и статьей 7 Закона № 119-ФЗ;
 						2. ЗОУИТ;
 						3. Охотничьи угодья;
 						4. Территории объектов культурного наследия;
 						5. Границы и территории</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ZonyNelzya">
-				<xs:annotation>
 					<xs:documentation>Территории, земли, зоны,  в границах которых земельные участки не могут быть предоставлены в безвозмездное пользование в соответствии с частями 3, 3.3 статьи 2 и статьей 7 Закона № 119-ФЗ</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Zouit">
-				<xs:annotation>
 					<xs:documentation>Зоны с особыми условиями использования территорий</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="HuntingGrounds">
-				<xs:annotation>
 					<xs:documentation>Охотничьи угодья</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="OKN">
-				<xs:annotation>
 					<xs:documentation>Территории объектов культурного наследия</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Bounds">
-				<xs:annotation>
 					<xs:documentation>Границы и территории</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>

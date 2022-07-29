@@ -1,31 +1,47 @@
 import xml.etree.ElementTree as ET
-import json as JS
+import json
 import uuid
 import datetime
 import xmltodict
 import codecs
 
-xml_file = codecs.open( "RegionDict.xml", "r", "utf_8_sig" )
-a = xmltodict.parse(xml_file.read())
-pretty = JS.dumps(a, ensure_ascii=False, indent=4)
-# print(pretty)
-# print(a)
-# print(type(a))
+xml_dict_names = ['RegionDict', 'ProcessingKindDict', 'ObjectKindDict',
+                  'InformationKindDict', 'CoordinateSystemDict']
 
-for item in a['xs:schema']['xs:simpleType']['xs:restriction']['xs:enumeration']:
-    print(item['@value'])
+path = codecs.open('RegionDict.xml', 'r', 'utf_8_sig')
+Region_Dict = xmltodict.parse(path.read())
+path = codecs.open('ProcessingKindDict.xml', 'r', 'utf_8_sig')
+ProcessingKindDict = xmltodict.parse(path.read())
+path = codecs.open('ObjectKindDict.xml', 'r', 'utf_8_sig')
+ObjectKindDict = xmltodict.parse(path.read())
+path = codecs.open('InformationKindDict.xml', 'r', 'utf_8_sig')
+InformationKindDict = xmltodict.parse(path.read())
+path = codecs.open('CoordinateSystemDict.xml', 'r', 'utf_8_sig')
+CoordinateSystemDict = xmltodict.parse(path.read())
 
-# for key, value in a['xs:schema']['xs:simpleType'][0]['xs:restriction'].items():
-#     print(key,value)
-#     print('')
+def dict_find(name, search_name, search_value, value_name):
+    for item in name['xs:schema']['xs:simpleType']['xs:restriction']['xs:enumeration']:
+        if item[f'{search_name}'] == f'{search_value}':
+            return item[value_name]
+    # pretty = JS.dumps(xml_dict, ensure_ascii=False, indent=4)
+    # print(pretty)
+    # print(xml_dict)
+    # print(type(xml_dict))
+    # for item in xml_dict['xs:schema']['xs:simpleType']['xs:restriction']['xs:enumeration']:
+    #     print(item['@value'])
+    
 
 
 
+
+### Вытаскиваем значения справочников
+
+###
 
 
 ns = {'xs': 'http://www.w3.org/2001/XMLSchema'}
 with open("input.json", "r", encoding='UTF-8') as json_file:
-    data = JS.load(json_file)
+    data = json.load(json_file)
 d = ET.parse('Dictionaries.xml')
 d_root = d.getroot()
 
@@ -73,10 +89,29 @@ CoordinateSystem = 'EPSG:3857'
 ZonyMozno = ET.SubElement(Package, 'ZonyMozno', attrib={'CoordinateSystem':CoordinateSystem})
 # 2.1.1
 ZonyMoznoEntitySpatial = ET.SubElement(ZonyMozno, 'ZonyMoznoEntitySpatial')
+#
+#
+#
+
+for i in range(len(data['features'])):
+    # print(data['features'][i]['properties']['string'])
+    Region = dict_find(Region_Dict, 'xs:documentation', data['features'][i]['properties']['string'], '@value')
+    Name = data['features'][i]['properties']['string8']
+    ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':f'{Region}', 'Name':f'{Name}',
+                                        'DocumentName':ph, 'Authority':ph})
 
 
 
 
+
+#     for j in rg['xs:schema']['xs:simpleType']['xs:restriction']['xs:enumeration']:
+#         ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':ph, 'Name':ph,
+#                                             'DocumentName':ph, 'Authority':ph})
+#         root[1][0][0].append(ZonyMoznoObjectInfo)
+
+#
+#
+#
 # 2.1.1.1
 ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':ph, 'Name':ph,
                                                                                            'DocumentName':ph, 'Authority':ph})
@@ -111,13 +146,7 @@ NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num
 #     print('')
 
 
-# for i in range(len(data['features'])):
-#     print(data['features'][i]['properties'][].values())
-#     print('')
 
-    # ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':ph, 'Name':ph,
-    #                                                                                        'DocumentName':ph, 'Authority':ph})
-    # root[1][0][0].append(ZonyMoznoObjectInfo)
 
 
     

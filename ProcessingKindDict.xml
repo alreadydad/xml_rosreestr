@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">	
     <xs:simpleType name="ProcessingKindDict">
-		<xs:annotation>
 			<xs:documentation>Тип обработки заявки</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Addition">
-				<xs:annotation>
 					<xs:documentation>Добавление</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Replacement">
-				<xs:annotation>
 					<xs:documentation>Замена</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Deletion">
-				<xs:annotation>
 					<xs:documentation>Удаление</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>

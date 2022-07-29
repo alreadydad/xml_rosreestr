@@ -88,7 +88,7 @@
             <xs:documentation>Амурская область</xs:documentation>
     </xs:enumeration>
     <xs:enumeration value="29">
-            <xs:documentation>Архангельская область</xs:documentation>
+            <xs:documentation>Архангельск</xs:documentation>
     </xs:enumeration>
     <xs:enumeration value="30">
             <xs:documentation>Астраханская область</xs:documentation>
