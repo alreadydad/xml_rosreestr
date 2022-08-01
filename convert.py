@@ -101,15 +101,16 @@ ZonyMozno = ET.SubElement(Package, 'ZonyMozno', attrib={'CoordinateSystem':Coord
 # Собираем объект
 for num_obj in range(len(features)):
     # print(features[i][p][s])
-    ZonyMoznoEntitySpatial = ET.SubElement(ZonyMozno, 'ZonyMoznoEntitySpatial')
-    Region = dict_find(Region_Dict, 'xs:documentation', features[num_obj][p][s], '@value')
-    Name = features[num_obj][p]['string4']
-    # Инициализируем объект
-    ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':f'29', 'Name':f'{Name}',
-                                        'DocumentName':ph, 'Authority':ph})
+
     if features[num_obj][g]['type'] == 'Polygon':
             # Polygon 
-            # Инициализируем геометрию/часть геометрии объекта                                 
+            # Инициализируем геометрию/часть геометрии объекта
+            ZonyMoznoEntitySpatial = ET.SubElement(ZonyMozno, 'ZonyMoznoEntitySpatial')
+            Region = dict_find(Region_Dict, 'xs:documentation', features[num_obj][p][s], '@value')
+            Name = features[num_obj][p]['string4']
+            # Инициализируем объект
+            ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':f'29', 'Name':f'{Name}',
+                                                'DocumentName':ph, 'Authority':ph})                                   
             SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
             SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
             if len(features[num_obj][g][c]) == 1:
@@ -142,19 +143,27 @@ for num_obj in range(len(features)):
                             NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_i_p+1}', 'X':f'{x}', 'Y':f'{y}'})
     # Multipolygon
     else:
+        # Инициализируем геометрию/часть геометрии объекта
+        ZonyMoznoEntitySpatial = ET.SubElement(ZonyMozno, 'ZonyMoznoEntitySpatial')
+        Region = dict_find(Region_Dict, 'xs:documentation', features[num_obj][p][s], '@value')
+        Name = features[num_obj][p]['string4']
+        # Инициализируем объект
+        ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':f'29', 'Name':f'{Name}',
+                                            'DocumentName':ph, 'Authority':ph})
         for num_part in range(len(features[num_obj][g][c])):
             SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
             for num_poly in range(len(features[num_obj][g][c][num_part])):
                 # Polygon 
                 # Инициализируем геометрию/часть геометрии объекта                                 
-                SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
-                SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'мультиТочка'})
-                if len(features[num_obj][g][c]) == 1:
+                # SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
+                
+                if len(features[num_obj][g][c][num_part]) == 1:
+                    SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'мультиТочка'})
                     for num_o_point in range(len(features[num_obj][g][c][num_part][num_poly])):
                         x = features[num_obj][g][c][num_part][num_poly][num_o_point][1]
                         y = features[num_obj][g][c][num_part][num_poly][num_o_point][0]
                         n_o_p = num_o_point
-                        if n_o_p == len(features[num_obj][g][c][num_part])-1:
+                        if n_o_p == len(features[num_obj][g][c][num_part][num_poly])-1:
                             n_o_p = 0
                         NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_o_p+1}', 'X':f'{x}', 'Y':f'{y}'})
                 # Polygon with inner    
