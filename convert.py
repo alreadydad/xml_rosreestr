@@ -32,15 +32,9 @@ def dict_find(name, search_name, search_value, value_name):
     
 
 
-
-
-### Вытаскиваем значения справочников
-
-###
-
-
+# Вытаскиваем значения справочников
 ns = {'xs': 'http://www.w3.org/2001/XMLSchema'}
-with open("input.json", "r", encoding='UTF-8') as json_file:
+with open("xml_rosreestr.json", "r", encoding='UTF-8') as json_file:
     data = json.load(json_file)
 d = ET.parse('Dictionaries.xml')
 d_root = d.getroot()
@@ -131,7 +125,7 @@ for num_obj in range(len(features)):
                         n_o_p = 0
                     NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_o_p+1}', 'X':f'{x}', 'Y':f'{y}'})
                 SpatialRingElement = ET.SubElement(SpatialElement, 'SpatialRingElement')
-                SpelementUnitInner = ET.SubElement(SpatialRingElement, 'SpelementUnit')
+                SpelementUnitInner = ET.SubElement(SpatialRingElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
                 for num_subpoly in range(len(features[num_obj][g][c])):
                     if num_subpoly > 0:
                         for num_i_point in range(len(features[num_obj][g][c][num_subpoly])):
@@ -147,140 +141,62 @@ for num_obj in range(len(features)):
         ZonyMoznoEntitySpatial = ET.SubElement(ZonyMozno, 'ZonyMoznoEntitySpatial')
         Region = dict_find(Region_Dict, 'xs:documentation', features[num_obj][p][s], '@value')
         Name = features[num_obj][p]['string4']
-        # Инициализируем объект
         ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':f'29', 'Name':f'{Name}',
-                                            'DocumentName':ph, 'Authority':ph})
+                                            'DocumentName':ph, 'Authority':'пупа'})
         for num_part in range(len(features[num_obj][g][c])):
             SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
             for num_poly in range(len(features[num_obj][g][c][num_part])):
-                # Polygon 
-                # Инициализируем геометрию/часть геометрии объекта                                 
-                # SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
-                
-                if len(features[num_obj][g][c][num_part]) == 1:
-                    SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'мультиТочка'})
-                    for num_o_point in range(len(features[num_obj][g][c][num_part][num_poly])):
+                if len(features[num_obj][g][c][num_part]) > 1:
+                    # Polygon with inner
+                    # Инициализируем информацию объекта
+                    SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
+                    for num_o_point in range(len(features[num_obj][g][c][num_part][0])):
+                        x = features[num_obj][g][c][num_part][0][num_o_point][1]
+                        y = features[num_obj][g][c][num_part][0][num_o_point][0]
+                        n_o_p = num_o_point
+                        if n_o_p == len(features[num_obj][g][c][num_part][0])-1:
+                            n_o_p = 0
+                        NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_o_p+1}', 'X':f'{x}', 'Y':f'{y}'})
+                    
+                    
+                    SpatialRingElement = ET.SubElement(SpatialElement, 'SpatialRingElement')
+
+                    SpelementUnitInner = ET.SubElement(SpatialRingElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
+                    for num_subpoly in range(len(features[num_obj][g][c][num_part])):
+                        if num_subpoly > 0:
+                            for num_i_point in range(len(features[num_obj][g][c][num_part][num_poly])):
+                                x = features[num_obj][g][c][num_part][num_poly][num_i_point][1]
+                                y = features[num_obj][g][c][num_part][num_poly][num_i_point][0]
+                                n_i_p = num_i_point
+                                if n_i_p == len(features[num_obj][g][c][num_part][num_poly])-1:
+                                    n_i_p = 0
+                                NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_i_p+1}', 'X':f'{x}', 'Y':f'{y}'})
+                else:
+                    # Polygon
+                    SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
+                    for num_o_point in range(len(features[num_obj][g][c][num_part][0])):
                         x = features[num_obj][g][c][num_part][num_poly][num_o_point][1]
                         y = features[num_obj][g][c][num_part][num_poly][num_o_point][0]
                         n_o_p = num_o_point
-                        if n_o_p == len(features[num_obj][g][c][num_part][num_poly])-1:
+                        if n_o_p == len(features[num_obj][g][c][num_part][0])-1:
                             n_o_p = 0
                         NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_o_p+1}', 'X':f'{x}', 'Y':f'{y}'})
-                # Polygon with inner    
-                # else:
-                #     for num_o_point in range(len(features[num_obj][g][c][0])):
-                #         x = features[num_obj][g][c][0][num_o_point][1]
-                #         y = features[num_obj][g][c][0][num_o_point][0]
-                #         n_o_p = num_o_point
-                #         if n_o_p == len(features[num_obj][g][c][0])-1:
-                #             n_o_p = 0
-                #         NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_o_p+1}', 'X':f'{x}', 'Y':f'{y}'})
-                #     SpatialRingElement = ET.SubElement(SpatialElement, 'SpatialRingElement')
-                #     SpelementUnitInner = ET.SubElement(SpatialRingElement, 'SpelementUnit')
-                #     for num_subpoly in range(len(features[num_obj][g][c])):
-                #         if num_subpoly > 0:
-                #             for num_i_point in range(len(features[num_obj][g][c][num_subpoly])):
-                #                 x = features[num_obj][g][c][num_subpoly][num_i_point][1]
-                #                 y = features[num_obj][g][c][num_subpoly][num_i_point][0]
-                #                 n_i_p = num_i_point
-                #                 if n_i_p == len(features[num_obj][g][c][num_subpoly])-1:
-                #                     n_i_p = 0
-                #                 NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num_Geopoint':f'{n_i_p+1}', 'X':f'{x}', 'Y':f'{y}'})
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    # for num_point in range(len(features[num_obj][g][c][0])):
-    #     # print(features[i][g][c][0][j][1])
-    #     SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
-    #     if features[num_obj][g]['type'] == 'Polygon':
-    #         if len(features[num_obj][g][c]) == 1:
-    #             x = features[num_obj][g][c][0][num_point][1]
-    #             y = features[num_obj][g][c][0][num_point][0]
-    #             NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{num_point+1}', 'X':f'{x}', 'Y':f'{y}'})
-    #         else:
-    #             # num_point = 0
-    #             print(features[num_obj][g][c][0][0][0])
-    #             x = features[num_obj][g][c][0][0][0][1]
-    #             y = features[num_obj][g][c][0][0][0][0]
-    #             NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{num_point+1}', 'X':f'{x}', 'Y':f'{y}'})
-    #             SpatialRingElement = ET.SubElement(SpatialElement, 'SpatialRingElement')
-    #             SpelementUnitInner = ET.SubElement(SpatialRingElement, 'SpelementUnit')
-    #             for num_subpoly in range(len(features[num_obj][g][c])):
-    #                 x = features[num_obj][g][c][0][num_subpoly+1][1]
-    #                 y = features[num_obj][g][c][0][num_subpoly+1][0]
-    #                 NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num_Geopoint':ph, 'X':ph, 'Y':ph})
-    #                 print(len(features[num_obj][g][c]))
-                # print(f'== {features[num_obj][g][c]}')
 
-        # else:
-        #     print(len(features[i][g][c][0][j]))
-        #     for k in range(len(features[i][g][c][0][j])):
-        #         x = features[i][g][c][0][j][0][1]
-        #         y = features[i][g][c][0][j][0][0]
-        #         NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':f'{j+1}', 'X':f'{x}', 'Y':f'{y}'})
-
-
-
-
-
-#     for j in rg['xs:schema']['xs:simpleType']['xs:restriction']['xs:enumeration']:
-#         ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':ph, 'Name':ph,
-#                                             'DocumentName':ph, 'Authority':ph})
-#         root[1][0][0].append(ZonyMoznoObjectInfo)
-
-#
-#
-#
-# 2.1.1.1
-ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':ph, 'Name':ph,
-                                                                                           'DocumentName':ph, 'Authority':ph})
-
-
-
-
-# 2.1.1.2
-SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
-
-# 2.1.1.2.1
-SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
-# 2.1.1.2.1.1
-NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':ph, 'X':ph, 'Y':ph})
-# 2.1.1.2.2
-SpatialRingElement = ET.SubElement(SpatialElement, 'SpatialRingElement')
-# 2.1.1.2.2.1
-SpelementUnitInner = ET.SubElement(SpatialRingElement, 'SpelementUnit')
-# 2.1.1.2.2.1.1
-NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num_Geopoint':ph, 'X':ph, 'Y':ph})
-
-# for i in root[1][0][0][0].iter():
-    # root[1][0][0][0].append(ZonyMoznoObjectInfo)
-
-
-# for i in range(len(features)):
-#     d = i + 1
-#     for key, value in features[d]['properties'].items():
-#         print(key, value)
-#         d+=1
-#     print('')
-
+# # 2.1.1.1
+# ZonyMoznoObjectInfo = ET.SubElement(ZonyMoznoEntitySpatial, 'ZonyMoznoObjectInfo', attrib={'Index':'', 'Region':ph, 'Name':ph,
+#                                                                                            'DocumentName':ph, 'Authority':ph})
+# # 2.1.1.2
+# SpatialElement = ET.SubElement(ZonyMoznoEntitySpatial, 'SpatialElement')
+# # 2.1.1.2.1
+# SpelementUnitOuter = ET.SubElement(SpatialElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
+# # 2.1.1.2.1.1
+# NewOrdinateOuter = ET.SubElement(SpelementUnitOuter, 'NewOrdinate', attrib={'Num_Geopoint':ph, 'X':ph, 'Y':ph})
+# # 2.1.1.2.2
+# SpatialRingElement = ET.SubElement(SpatialElement, 'SpatialRingElement')
+# # 2.1.1.2.2.1
+# SpelementUnitInner = ET.SubElement(SpatialRingElement, 'SpelementUnit', attrib={'TypeUnit':'Точка'})
+# # 2.1.1.2.2.1.1
+# NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num_Geopoint':ph, 'X':ph, 'Y':ph})
 
 
 
@@ -291,9 +207,4 @@ NewOrdinateInner = ET.SubElement(SpelementUnitInner, 'NewOrdinate', attrib={'Num
 # Сохранение 
 ET.indent(root, space='   ', level=0)
 tree = ET.ElementTree(root)
-
-
-
-
-
 tree.write("DataMessage.xml", encoding='UTF-8')
