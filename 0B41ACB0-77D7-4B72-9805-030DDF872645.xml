@@ -1,0 +1,347 @@
+<DataMessage>
+   <eDocument Version="01" GUID="0B41ACB0-77D7-4B72-9805-030DDF872645" ProcessingKind="Addition" InformationKind="ZonyMozno">
+      <Sender Region="29" Name="" DateTime_Upload="2022-09-14T15:06:00" Count_Unload="5" />
+   </eDocument>
+   <Package>
+      <ZonyMozno CoordinateSystem="EPSG:3857">
+         <ZonyMoznoEntitySpatial>
+            <ZonyMoznoObjectInfo Index="" Region="29" Name="полигон" Area="1" DocumentName="" Authority="Минимущества АО" />
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="7189403.706187902" Y="4953726.161497424" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="7189403.706187902" Y="4954179.203545142" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="7189292.162404275" Y="4954269.814621563" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="7189215.063420017" Y="4953927.510933079" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="5" X="7189279.039347356" Y="4953459.379713139" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="6" X="7189374.180300939" Y="4953464.413568824" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="7189403.706187902" Y="4953726.161497424" />
+               </SpelementUnit>
+            </SpatialElement>
+         </ZonyMoznoEntitySpatial>
+         <ZonyMoznoEntitySpatial>
+            <ZonyMoznoObjectInfo Index="" Region="29" Name="мультиполигон" Area="1" DocumentName="" Authority="Минимущества АО" />
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.5845437772202" Y="40.60374355473321" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.58392491330962" Y="40.604910850001005" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.58424908192791" Y="40.60793209390246" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.58495634515796" Y="40.60614681401056" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="5" X="64.58439642997273" Y="40.60570049338273" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="6" X="64.58486793846974" Y="40.6042928706156" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.5845437772202" Y="40.60374355473321" />
+               </SpelementUnit>
+            </SpatialElement>
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58355653532226" Y="40.60789775953161" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.58351232974125" Y="40.61006069392893" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.58274608620523" Y="40.609683036804185" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.58273135076834" Y="40.60662746377055" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="5" X="64.58361547636007" Y="40.60700512089532" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58355653532226" Y="40.60789775953161" />
+                  <NewOrdinate Num_Geopoint="1" X="64.58174404202408" Y="40.60697078757219" />
+                  <NewOrdinate Num_Geopoint="2" X="64.5820829735292" Y="40.60958003997801" />
+                  <NewOrdinate Num_Geopoint="3" X="64.58136089891227" Y="40.61163997650146" />
+                  <NewOrdinate Num_Geopoint="4" X="64.580211435542" Y="40.60844707646173" />
+                  <NewOrdinate Num_Geopoint="5" X="64.58068301595505" Y="40.605357171676566" />
+                  <NewOrdinate Num_Geopoint="6" X="64.58113985190286" Y="40.608206748962395" />
+                  <NewOrdinate Num_Geopoint="7" X="64.58122827069711" Y="40.60415554203791" />
+                  <NewOrdinate Num_Geopoint="8" X="64.5821861244388" Y="40.606146812438936" />
+                  <NewOrdinate Num_Geopoint="1" X="64.58174404202408" Y="40.60697078757219" />
+               </SpelementUnit>
+            </SpatialElement>
+         </ZonyMoznoEntitySpatial>
+         <ZonyMoznoEntitySpatial>
+            <ZonyMoznoObjectInfo Index="" Region="29" Name="полигон с отверстием" Area="1" DocumentName="" Authority="Минимущества АО" />
+            <SpatialElement>
+               <SpatialRingElement>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58164088943967" Y="40.60940837860105" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="2" X="64.58130195299371" Y="40.61040401511125" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="3" X="64.5810366964674" Y="40.60923671722411" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="4" X="64.58156720806028" Y="40.60786342620848" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58164088943967" Y="40.60940837860105" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+            </SpatialElement>
+         </ZonyMoznoEntitySpatial>
+         <ZonyMoznoEntitySpatial>
+            <ZonyMoznoObjectInfo Index="" Region="29" Name="мультиполигон с отверстием" Area="1" DocumentName="" Authority="Минимущества АО" />
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58458798112649" Y="40.61589718441244" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.58349759471903" Y="40.614558219909675" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.58352706475553" Y="40.61812877969347" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58458798112649" Y="40.61589718441244" />
+               </SpelementUnit>
+            </SpatialElement>
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58557518562303" Y="40.61160564474993" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.58553098331963" Y="40.613837242650305" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.5844995732421" Y="40.614317895029664" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.5846616543315" Y="40.61160564474993" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="5" X="64.58536890684363" Y="40.61091899924212" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58557518562303" Y="40.61160564474993" />
+               </SpelementUnit>
+               <SpatialRingElement>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58557518562303" Y="40.61160564474993" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="2" X="64.58553098331963" Y="40.613837242650305" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="3" X="64.5844995732421" Y="40.614317895029664" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="4" X="64.5846616543315" Y="40.61160564474993" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="5" X="64.58536890684363" Y="40.61091899924212" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58557518562303" Y="40.61160564474993" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58557518562303" Y="40.61160564474993" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.58553098331963" Y="40.613837242650305" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.5844995732421" Y="40.614317895029664" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.5846616543315" Y="40.61160564474993" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="5" X="64.58536890684363" Y="40.61091899924212" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58557518562303" Y="40.61160564474993" />
+               </SpelementUnit>
+               <SpatialRingElement>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58517736118448" Y="40.6133909220225" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="2" X="64.58477953093244" Y="40.613013267517076" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="3" X="64.58517736118448" Y="40.612154960632324" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58517736118448" Y="40.6133909220225" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+            </SpatialElement>
+         </ZonyMoznoEntitySpatial>
+         <ZonyMoznoEntitySpatial>
+            <ZonyMoznoObjectInfo Index="" Region="29" Name="мультиполигон с несколькими отверстиями" Area="1" DocumentName="" Authority="Минимущества АО" />
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58281976439461" Y="40.613940240524244" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.5821861244388" Y="40.61287593789164" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.58221559758125" Y="40.61565685429376" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.58284923572691" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58281976439461" Y="40.613940240524244" />
+               </SpelementUnit>
+               <SpatialRingElement>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58281976439461" Y="40.613940240524244" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="2" X="64.5821861244388" Y="40.61287593789164" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="3" X="64.58221559758125" Y="40.61565685429376" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="4" X="64.58284923572691" Y="40.61569118604529" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58281976439461" Y="40.613940240524244" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58281976439461" Y="40.613940240524244" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.5821861244388" Y="40.61287593789164" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.58221559758125" Y="40.61565685429376" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.58284923572691" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58281976439461" Y="40.613940240524244" />
+               </SpelementUnit>
+               <SpatialRingElement>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58252505044096" Y="40.61507320404051" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="2" X="64.58231874911267" Y="40.61428356327814" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="3" X="64.58258399371178" Y="40.61442089028421" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58252505044096" Y="40.61507320404051" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+            </SpatialElement>
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58279029303038" Y="40.61723613843786" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.5820682377334" Y="40.61727047018938" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.5821861244388" Y="40.6192960749613" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.58290817829591" Y="40.61957073159283" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58279029303038" Y="40.61723613843786" />
+               </SpelementUnit>
+            </SpatialElement>
+            <SpatialElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58172930716908" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.58096301345304" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.5810809049436" Y="40.617888452194165" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.58164088943967" Y="40.61781978607175" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58172930716908" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpatialRingElement>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58172930716908" Y="40.61569118604529" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="2" X="64.58096301345304" Y="40.61569118604529" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="3" X="64.5810809049436" Y="40.617888452194165" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="4" X="64.58164088943967" Y="40.61781978607175" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58172930716908" Y="40.61569118604529" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58172930716908" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="2" X="64.58096301345304" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="3" X="64.5810809049436" Y="40.617888452194165" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="4" X="64.58164088943967" Y="40.61781978607175" />
+               </SpelementUnit>
+               <SpelementUnit TypeUnit="Точка">
+                  <NewOrdinate Num_Geopoint="1" X="64.58172930716908" Y="40.61569118604529" />
+               </SpelementUnit>
+               <SpatialRingElement>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58146405368169" Y="40.61672115430699" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="2" X="64.58127248054872" Y="40.617030145309386" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="3" X="64.5813608994744" Y="40.61634349980157" />
+                  </SpelementUnit>
+                  <SpelementUnit TypeUnit="Точка">
+                     <NewOrdinate Num_Geopoint="1" X="64.58146405368169" Y="40.61672115430699" />
+                  </SpelementUnit>
+               </SpatialRingElement>
+            </SpatialElement>
+         </ZonyMoznoEntitySpatial>
+      </ZonyMozno>
+   </Package>
+</DataMessage>
